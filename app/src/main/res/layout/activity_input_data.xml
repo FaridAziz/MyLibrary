@@ -1,100 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".InputDataActivity"
-    android:id="@+id/inputLayout"
-    android:orientation="vertical">
+<layout>
 
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="50dp"
-        android:layout_gravity="center"
-        android:id="@+id/imgLogo"
-        android:src="@drawable/mydata"/>
+    <data>
+        <variable
+            name="user"
+            type="org.aplas.mylibrary.viewmodels.User"
+            />
+        <variable
+            name="book"
+            type="org.aplas.mylibrary.viewmodels.Book"
+            />
+    </data>
 
-    <TextView
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtTitleInput"
-        android:gravity="center"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:text="Input Book Data"/>
+        android:layout_height="match_parent"
+        tools:context=".InputDataActivity"
+        android:id="@+id/inputLayout"
+        android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtTitle"
-        android:gravity="center"
-        android:textSize="30dp"
-        android:text="Title"/>
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            android:id="@+id/imgLogo"
+            android:src="@drawable/mydata"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editTitle"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtTitleInput"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:text="Input Book Data"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtType"
-        android:gravity="center"
-        android:textSize="30dp"
-        android:text="Type"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtTitle"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:text="Title"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/spType"
-        android:text="@array/book_types"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTitle"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtYear"
-        android:gravity="center"
-        android:textSize="30dp"
-        android:text="Year"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtType"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:text="Type"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editYear"/>
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spType"
+            android:text="@array/book_types"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnSaveBook"
-        android:layout_gravity="center"
-        android:text="Save This Book"
-        android:background="@color/lightBlue"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtYear"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:text="Year"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnShow"
-        android:layout_gravity="center"
-        android:text="View Data"
-        android:background="@drawable/btn_edit"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editYear"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnLogout"
-        android:layout_gravity="center"
-        android:text="Logout"
-        android:background="@drawable/btn_logout"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnSaveBook"
+            android:layout_gravity="center"
+            android:text="Save This Book"
+            android:background="@color/lightBlue"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtProfile"
-        android:textStyle="italic"
-        android:gravity="center"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnShow"
+            android:layout_gravity="center"
+            android:text="View Data"
+            android:background="@drawable/btn_edit"/>
 
-</LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnLogout"
+            android:layout_gravity="center"
+            android:text="Logout"
+            android:background="@drawable/btn_logout"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtProfile"
+            android:textStyle="italic"
+            android:gravity="center"/>
+
+    </LinearLayout>
+</layout>
