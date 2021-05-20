@@ -33,8 +33,9 @@ public class BookData {
             final File file = new File(DATA_LOCATION+fname);
             if (file.exists()) {
                 BufferedReader reader;
-                reader = new BufferedReader(new InputStreamReader(new
-                        FileInputStream(file)));
+                FileInputStream fis = new FileInputStream(file);
+                InputStreamReader isr = new InputStreamReader(fis);
+                reader = new BufferedReader(isr);
                 String line, title="", type="", year="";
                 while((line = reader.readLine()) != null){
                     if (line.startsWith("Title:")) {
@@ -45,14 +46,23 @@ public class BookData {
                         year = line.split(":")[1];
                     }
                 }
-                int number = fileList.indexOf(fileName);
-                return new Book(number,title.trim(), type.trim(),
-                        year.trim());
+                //fis.close();
+                //isr.close();
+                try {
+                    reader.wait();
+                } catch (Exception ignored) {
+
+                }
+                reader.close();
+                int number = fileList.indexOf(fileName)+1;
+                return new Book(number,title.trim(),type.trim(),year.trim());
             } else {
-                return null;}
+                return null;
+            }
         } catch (Exception e) {
             e.printStackTrace();
-            return null; }
+            return null;
+        }
     }
 
     public BookList getBookList() {
